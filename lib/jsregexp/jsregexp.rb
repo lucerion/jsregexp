@@ -7,13 +7,14 @@ class JSRegexp
   def self.convert(regexp)
     regexp.source
       .sub('\\A', '^')
+      .sub('\\G', '^')
       .sub('\\Z', '$')
       .sub('\\z', '$')
-      .gsub(/\(\?#.+\)/, '')
-      .gsub(/\(\?-\w+:/, '(')
-      .gsub(/\s/, '')
       .gsub('\\R', '')
       .gsub('\\a', '')
       .gsub('\\e', '')
+      .gsub(/\(\?#.+\)/, '')
+      .gsub(/\(\?-\w+:/, '(')
+      .gsub(/\s/, '')
   end
 end

@@ -8,28 +8,20 @@ describe JSRegexp do
       subject.convert(//).must_equal ''
     end
 
-    it 'replace \A with ^' do
+    it 'replace \A anchor with ^' do
       subject.convert(/\A[a-z]/).must_equal '^[a-z]'
     end
 
-    it 'replace \Z with $' do
+    it 'replace \G anchor with ^' do
+      subject.convert(/\A[a-z]/).must_equal '^[a-z]'
+    end
+
+    it 'replace \Z anchor with $' do
       subject.convert(/[a-z]\Z/).must_equal '[a-z]$'
     end
 
-    it 'replace \z with $' do
+    it 'replace \z anchor with $' do
       subject.convert(/[a-z]\Z/).must_equal '[a-z]$'
-    end
-
-    it 'remove comments' do
-      subject.convert(/(?# comment)/).must_equal ''
-    end
-
-    it 'replace group options' do
-      subject.convert(/(?-mix:options)/).must_equal '(options)'
-    end
-
-    it 'remove whitespaces' do
-      subject.convert(/[a-z] [1-9]/).must_equal '[a-z][1-9]'
     end
 
     it 'remove \R (line break) character' do
@@ -42,6 +34,18 @@ describe JSRegexp do
 
     it 'remove \e (escape) character' do
       subject.convert(/\e[a-z]/).must_equal '[a-z]'
+    end
+
+    it 'remove comments' do
+      subject.convert(/(?# comment)/).must_equal ''
+    end
+
+    it 'replace group options' do
+      subject.convert(/(?-mix:options)/).must_equal '(options)'
+    end
+
+    it 'remove whitespaces' do
+      subject.convert(/[a-z] [1-9]/).must_equal '[a-z][1-9]'
     end
   end
 end
