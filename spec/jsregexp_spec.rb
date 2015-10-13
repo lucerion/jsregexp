@@ -31,5 +31,17 @@ describe JSRegexp do
     it 'remove whitespaces' do
       subject.convert(/[a-z] [1-9]/).must_equal '[a-z][1-9]'
     end
+
+    it 'remove \R (line break) character' do
+      subject.convert(/[a-z]\R/).must_equal '[a-z]'
+    end
+
+    it 'remove \a (bell or alert) character' do
+      subject.convert(/\a[a-z]/).must_equal '[a-z]'
+    end
+
+    it 'remove \e (escape) character' do
+      subject.convert(/\e[a-z]/).must_equal '[a-z]'
+    end
   end
 end

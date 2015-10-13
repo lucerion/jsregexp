@@ -12,5 +12,8 @@ class JSRegexp
       .gsub(/\(\?#.+\)/, '')
       .gsub(/\(\?-\w+:/, '(')
       .gsub(/\s/, '')
+      .gsub('\\R', '')
+      .gsub('\\a', '')
+      .gsub('\\e', '')
   end
 end
