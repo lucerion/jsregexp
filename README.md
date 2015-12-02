@@ -26,7 +26,9 @@ Or install it yourself as:
 ## Usage
 
 ``` ruby
-JSRegexp.convert(/\Ahello/) # => '^hello'
+JSRegexp.convert(/\Afoo/)   # => '^foo'
+JSRegexp.convert('/\Gbar/') # => '^bar'
+JSRegexp.convert('baz\Z')   # => 'baz$'
 ```
 
 ## License
