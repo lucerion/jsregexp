@@ -5,7 +5,8 @@ class JSRegexp
   # @params regexp [Regexp, String] a Ruby regular expression
   # @return [String] JavaSript regular expression represented as a string
   def self.convert(regexp)
-    str_regexp = regexp.inspect
+    regexp_str = regexp.is_a?(Regexp) ? regexp.inspect : regexp.to_s
+    regexp_str
       .sub(/^\// , '')
       .sub(/\/[a-z]*$/ , '')
       .sub('\\A', '^')
@@ -18,6 +19,5 @@ class JSRegexp
       .gsub(/\(\?#.+\)/, '')
       .gsub(/\(\?-\w+:/, '(')
       .gsub(/\s/, '')
-    Regexp.new(str_regexp).source
   end
 end
