@@ -35,9 +35,9 @@ describe JSRegexp do
     end
 
     it 'replace \z anchor with $' do
-      subject.convert(/[a-z]\Z/).must_equal '[a-z]$'
-      subject.convert('/[a-z]\Z/').must_equal '[a-z]$'
-      subject.convert('[a-z]\Z').must_equal '[a-z]$'
+      subject.convert(/[a-z]\z/).must_equal '[a-z]$'
+      subject.convert('/[a-z]\z/').must_equal '[a-z]$'
+      subject.convert('[a-z]\z').must_equal '[a-z]$'
     end
 
     it 'remove \R (line break) character' do
@@ -46,7 +46,7 @@ describe JSRegexp do
       subject.convert('[a-z]\R').must_equal '[a-z]'
     end
 
-    it 'remove \a (bell or alert) character' do
+    it 'remove \a (bell/alert) character' do
       subject.convert(/\a[a-z]/).must_equal '[a-z]'
       subject.convert('/\a[a-z]/').must_equal '[a-z]'
       subject.convert('\a[a-z]').must_equal '[a-z]'
