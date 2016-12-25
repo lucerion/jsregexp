@@ -1,8 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 require 'minitest/autorun'
-require 'codeclimate-test-reporter'
+require 'simplecov'
 
-CodeClimate::TestReporter.start
+SimpleCov.start
 
 require 'jsregexp'
