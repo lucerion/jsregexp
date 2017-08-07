@@ -2,6 +2,8 @@ require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'rdoc/task'
 
+spec = Gem::Specification.load('jsregexp.gemspec')
+
 RDoc::Task.new(:rdoc) do |r|
   r.rdoc_dir = 'rdoc'
   r.title    = 'jsregexp'
@@ -16,4 +18,10 @@ Rake::TestTask.new(:spec) do |t|
   t.test_files = FileList['spec/**/*_spec.rb']
 end
 
+desc 'Uninstall gem'
+task :uninstall do
+  `gem uninstall #{spec.name}`
+end
+
+task purge: %i(uninstall clobber)
 task default: :spec
