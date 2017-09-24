@@ -34,4 +34,4 @@ JSRegexp.convert('baz\Z')   # => 'baz$'
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+[BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)

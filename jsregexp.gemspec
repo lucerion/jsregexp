@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Ruby to JavaScript regular expression converter'
   spec.description   = 'JSRegexp is a converter from Ruby Regexp to valid JavaScript RegExp format'
   spec.homepage      = 'https://github.com/lucerion/jsregexp'
-  spec.license       = 'MIT'
+  spec.license       = 'BSD-3-Clause'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.require_paths = 'lib'
