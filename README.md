@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/jsregexp.svg)](https://badge.fury.io/rb/jsregexp)
 [![Build Status](https://travis-ci.org/lucerion/jsregexp.svg?branch=master)](https://travis-ci.org/lucerion/jsregexp)
 
-JSRegexp is a converter from Ruby Regexp to valid JavaScript RegExp format
+JSRegexp is a converter from Ruby Regexp to a valid JavaScript RegExp format
 
 
 ## Installation
@@ -34,4 +34,4 @@ JSRegexp.convert('baz\Z')   # => 'baz$'
 
 ## License
 
-[BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)
+[BSD-3-Clause](LICENSE)
