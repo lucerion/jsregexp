@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Ruby to JavaScript regular expression converter
 class JSRegexp
   # Convert Ruby Regexp to JavaSript RegExp format

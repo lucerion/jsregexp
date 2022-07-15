@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'rdoc/task'
@@ -23,5 +25,5 @@ task :uninstall do
   `gem uninstall #{spec.name}`
 end
 
-task purge: %i(uninstall clobber)
+task purge: %i[uninstall clobber]
 task default: :spec
